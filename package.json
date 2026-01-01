@@ -21,9 +21,16 @@
   "type": "module",
   "license": "ISC",
   "devDependencies": {
+    "@eslint/css": "^0.14.1",
     "@eslint/js": "^9.39.2",
     "eslint": "^9.39.2",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-jsdoc": "^61.5.0",
+    "eslint-plugin-jsonc": "^2.21.0",
+    "eslint-plugin-perfectionist": "^5.2.0",
+    "eslint-plugin-prettier": "^5.5.4",
     "globals": "^16.5.0",
+    "jsonc-eslint-parser": "^2.4.2",
     "parcel": "^2.16.3",
     "prettier": "3.7.4"
   }
