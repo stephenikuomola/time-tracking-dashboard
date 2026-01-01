@@ -20,6 +20,9 @@ The introduction section with drop-down navigation should be responsive across a
 --green-400: hsl(145, 50%, 55%);
 --purple-700: hsl(264, 64%, 52%);
 --yellow-300: hsl(43, 84%, 65%);
+--gray-200: hsl(0, 0%, 85%); 
+--white: hsl(0, 100%, 100%);
+--black: hsl(0, 0%, 0%);
 ```
 
 ## Size
