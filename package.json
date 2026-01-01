@@ -1,0 +1,12 @@
+{
+  "name": "time-tracking-dashboard-main",
+  "version": "1.0.0",
+  "description": "![Design preview for the Time tracking dashboard coding challenge](./preview.jpg)",
+  "source": "index.html",
+  "scripts": {
+     "browserslist": "> 0.3%, last 2 versions, Firefox ESR, not dead"
+  },
+  "keywords": ["HTML", "CSS", "JavaScript", "Prettier", "ESLint", "Parcel"],
+  "author": "",
+  "license": "ISC"
+}
