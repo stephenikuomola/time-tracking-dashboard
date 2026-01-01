@@ -1,21 +1,17 @@
 import js from '@eslint/js';
 import globals from 'globals';
-import { defineConfig } from 'eslint/config';
+import { defineConfig, globalIgnores } from 'eslint/config';
 import eslintConfigPrettier from 'eslint-config-prettier/flat';
 import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended';
 import jsdoc from 'eslint-plugin-jsdoc';
 import perfectionist from 'eslint-plugin-perfectionist';
-import packageJson from "eslint-plugin-package-json";
+import packageJson from 'eslint-plugin-package-json';
 import eslintPluginJsonc from 'eslint-plugin-jsonc';
-import * as jsoncParser from "jsonc-eslint-parser";
+import * as jsoncParser from 'jsonc-eslint-parser';
+import css from '@eslint/css';
 
 export default defineConfig([
-  {
-    files: ['**/*.{js,mjs,cjs}'],
-    plugins: { js },
-    extends: ['js/recommended'],
-    languageOptions: { globals: globals.browser }
-  },
+  globalIgnores(['.parcel-cache/', '.dist/', 'node_modules/']),
   jsdoc.configs['flat/recommended'],
   perfectionist.configs['recommended-natural'],
   eslintConfigPrettier,
@@ -23,22 +19,37 @@ export default defineConfig([
   packageJson.configs.recommended,
   ...eslintPluginJsonc.configs['flat/base'],
   {
-    files: ['**/*.js', '**/*.json', '**/*.json5'],
+    files: [
+      '**/*.{js,mjs,cjs}',
+      '**/*.js',
+      '**/*.json',
+      '**/*.json5',
+      '**/*.css'
+    ],
     languageOptions: {
+      tolerant: true,
       parser: jsoncParser,
+      globals: globals.browser
     },
     plugins: {
-      jsdoc
+      jsdoc,
+      css,
+      js
     },
+    language: 'css/css',
+    extends: ['css/recommended', 'js/recommended'],
     rules: {
-      'jsonc/quote':'error',
-      'jsonc/quote-props':'error',
-      'jsonc/valid-json-number':'error',
+      'css/no-empty-blocks': 'error',
+      'css/no-invalid-at-rules': 'error',
+      'css/no-invalid-properties': 'error',
+      'jsonc/quote': 'error',
+      'jsonc/quote-props': 'error',
+      'jsonc/valid-json-number': 'error',
       'jsonc/no-sparse-arrays': 'error',
-      'jsonc/no-dupe-keys':'error',
-      'jsonc/no-comments':'error',
+      'jsonc/no-dupe-keys': 'error',
+      'jsonc/no-comments': 'error',
       'jsdoc/require-description': 'error',
-      'jsonc/no-template-literals':'error',
+      'jsonc/no-template-literals': 'error',
       'jsonc/no-undefined-values': 'error',
       'jsdoc/check-access': 1,
       'jsdoc/check-alignment': 1,
