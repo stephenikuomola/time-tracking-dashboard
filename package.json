@@ -14,7 +14,8 @@
     "ESLint",
     "Parcel"
   ],
-  "author": "",
+  "author": "Damilola Ikuomola",
+   "type": "module",
   "license": "ISC",
   "devDependencies": {
     "parcel": "^2.16.3"
