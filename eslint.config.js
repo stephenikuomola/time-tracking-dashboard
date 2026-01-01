@@ -4,6 +4,10 @@ import { defineConfig } from 'eslint/config';
 import eslintConfigPrettier from 'eslint-config-prettier/flat';
 import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended';
 import jsdoc from 'eslint-plugin-jsdoc';
+import perfectionist from 'eslint-plugin-perfectionist';
+import packageJson from "eslint-plugin-package-json";
+import eslintPluginJsonc from 'eslint-plugin-jsonc';
+import * as jsoncParser from "jsonc-eslint-parser";
 
 export default defineConfig([
   {
@@ -13,15 +17,29 @@ export default defineConfig([
     languageOptions: { globals: globals.browser }
   },
   jsdoc.configs['flat/recommended'],
+  perfectionist.configs['recommended-natural'],
   eslintConfigPrettier,
   eslintPluginPrettierRecommended,
+  packageJson.configs.recommended,
+  ...eslintPluginJsonc.configs['flat/base'],
   {
-    files: ['**/*.js'],
+    files: ['**/*.js', '**/*.json', '**/*.json5'],
+    languageOptions: {
+      parser: jsoncParser,
+    },
     plugins: {
       jsdoc
     },
     rules: {
-      'jsdoc/require-description': 'warn',
+      'jsonc/quote':'error',
+      'jsonc/quote-props':'error',
+      'jsonc/valid-json-number':'error',
+      'jsonc/no-sparse-arrays': 'error',
+      'jsonc/no-dupe-keys':'error',
+      'jsonc/no-comments':'error',
+      'jsdoc/require-description': 'error',
+      'jsonc/no-template-literals':'error',
+      'jsonc/no-undefined-values': 'error',
       'jsdoc/check-access': 1,
       'jsdoc/check-alignment': 1,
       'jsdoc/check-indentation': 1,
