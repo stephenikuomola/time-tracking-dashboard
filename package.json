@@ -24,6 +24,8 @@
   "devDependencies": {
     "@eslint/css": "^0.14.1",
     "@eslint/js": "^9.39.2",
+    "@parcel/packager-raw-url": "^2.16.3",
+    "@parcel/transformer-webmanifest": "^2.16.3",
     "eslint": "^9.39.2",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-jsdoc": "^61.5.0",
