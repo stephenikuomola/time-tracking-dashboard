@@ -1,13 +1,13 @@
-import js from '@eslint/js';
-import globals from 'globals';
-import { defineConfig, globalIgnores } from 'eslint/config';
-import eslintConfigPrettier from 'eslint-config-prettier/flat';
-import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended';
-import jsdoc from 'eslint-plugin-jsdoc';
-import perfectionist from 'eslint-plugin-perfectionist';
-import eslintPluginJsonc from 'eslint-plugin-jsonc';
-import * as jsoncParser from 'jsonc-eslint-parser';
 import css from '@eslint/css';
+import js from '@eslint/js';
+import eslintConfigPrettier from 'eslint-config-prettier/flat';
+import jsdoc from 'eslint-plugin-jsdoc';
+import eslintPluginJsonc from 'eslint-plugin-jsonc';
+import perfectionist from 'eslint-plugin-perfectionist';
+import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended';
+import { defineConfig, globalIgnores } from 'eslint/config';
+import globals from 'globals';
+import * as jsoncParser from 'jsonc-eslint-parser';
 
 export default defineConfig([
   globalIgnores(['dist/**', '.parcel-cache/**', 'node_modules/**']),
@@ -16,13 +16,13 @@ export default defineConfig([
     plugins: { jsdoc }
   },
   {
+    extends: ['css/recommended'],
     files: ['**/*.css'],
     language: 'css/css',
-    plugins: { css },
-    extends: ['css/recommended'],
     languageOptions: {
       tolerant: true
     },
+    plugins: { css },
     rules: {
       'css/no-empty-blocks': 'error'
     }
@@ -32,24 +32,11 @@ export default defineConfig([
     languageOptions: { parser: jsoncParser }
   },
   {
-    files: ['**/*.{js,mjs,cjs}', '**/*.js'],
-    plugins: { js },
     extends: ['js/recommended'],
+    files: ['**/*.{js,mjs,cjs}', '**/*.js'],
     languageOptions: { globals: globals.browser },
+    plugins: { js },
     rules: {
-      'no-dupe-args': 'error',
-      'no-dupe-class-members': 'error',
-      'no-dupe-keys': 'error',
-      'no-ex-assign': 'error',
-      'no-magic-numbers': 'error',
-      'no-self-compare': 'error',
-      'no-sparse-arrays': 'error',
-      'no-this-before-super': 'error',
-      'no-unreachable': 'error',
-      'no-useless-assignment': 'error',
-      'no-var': 'error',
-      quotes: ['error', 'single', { allowTemplateLiterals: true }],
-      semi: 'error',
       'constructor-super': ['error'],
       'default-case': ['error'],
       'default-case-last': ['error'],
@@ -83,7 +70,20 @@ export default defineConfig([
       'jsdoc/require-yields': ['warn'], // Recommended
       'jsdoc/require-yields-check': ['warn'], // Recommended
       'jsdoc/tag-lines': ['warn'], // Recommended
-      'jsdoc/valid-types': ['warn'] // Recommend
+      'jsdoc/valid-types': ['warn'], // Recommend
+      'no-dupe-args': 'error',
+      'no-dupe-class-members': 'error',
+      'no-dupe-keys': 'error',
+      'no-ex-assign': 'error',
+      'no-magic-numbers': 'error',
+      'no-self-compare': 'error',
+      'no-sparse-arrays': 'error',
+      'no-this-before-super': 'error',
+      'no-unreachable': 'error',
+      'no-useless-assignment': 'error',
+      'no-var': 'error',
+      quotes: ['error', 'single', { allowTemplateLiterals: true }],
+      semi: 'error'
     }
   },
 
