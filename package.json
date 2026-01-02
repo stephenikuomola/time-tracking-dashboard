@@ -4,6 +4,7 @@
   "description": "![Design preview for the Time tracking dashboard coding challenge](./preview.jpg)",
   "source": "index.html",
   "scripts": {
+    "start": "parcel index.html",
     "browserslist": "> 0.3%, last 2 versions, Firefox ESR, not dead",
     "lint:prettier": "prettier --write .",
     "lint": "npx eslint src/*.js",
