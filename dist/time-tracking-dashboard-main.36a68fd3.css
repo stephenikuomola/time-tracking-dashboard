@@ -1,2 +1,46 @@
-
+:root {
+  --navy-950: #0f1424;
+  --navy-900: #1c1f4a;
+  --purple-500: #6f76c8;
+  --navy-200: #bdc1ff;
+  --purple-600: #5847eb;
+  --orange-300: #ff8c66;
+  --blue-300: #56c2e6;
+  --pink-400: #ff5c7c;
+  --green-400: #53c683;
+  --purple-700: #7536d3;
+  --yellow-300: #f1c65b;
+  --gray-200: #d9d9d9;
+  --white: #fff;
+  --black: #000;
+  --space-11: clamp(.1875rem, .1875rem + 0vw, .1875rem);
+  --space-12: clamp(.375rem, .3571rem + .0893vw, .4375rem);
+  --space-13: clamp(.5625rem, .5446rem + .0893vw, .625rem);
+  --space-14: clamp(.75rem, .7143rem + .1786vw, .875rem);
+  --space-15: clamp(1.125rem, 1.0893rem + .1786vw, 1.25rem);
+  --space-16: clamp(1.5rem, 1.4464rem + .2679vw, 1.6875rem);
+  --space-17: clamp(2.25rem, 2.1607rem + .4464vw, 2.5625rem);
+  --space-18: clamp(3rem, 2.8929rem + .5357vw, 3.375rem);
+  --space-19: clamp(4.5rem, 4.3393rem + .8036vw, 5.0625rem);
+  --space-11-12: clamp(.1875rem, .1161rem + .3571vw, .4375rem);
+  --space-12-13: clamp(.375rem, .3036rem + .3571vw, .625rem);
+  --space-13-14: clamp(.5625rem, .4732rem + .4464vw, .875rem);
+  --space-14-15: clamp(.75rem, .6071rem + .7143vw, 1.25rem);
+  --space-15-16: clamp(1.125rem, .9643rem + .8036vw, 1.6875rem);
+  --space-16-17: clamp(1.5rem, 1.1964rem + 1.5179vw, 2.5625rem);
+  --space-17-18: clamp(2.25rem, 1.9286rem + 1.6071vw, 3.375rem);
+  --space-18-19: clamp(3rem, 2.4107rem + 2.9464vw, 5.0625rem);
+  --space-14-16: clamp(.75rem, .4821rem + 1.3393vw, 1.6875rem);
+  --space-15-17: clamp(1.125rem, .7143rem + 2.0536vw, 2.5625rem);
+  --space-16-18: clamp(1.5rem, .9643rem + 2.6786vw, 3.375rem);
+  --space-17-19: clamp(2.25rem, 1.4464rem + 4.0179vw, 5.0625rem);
+  --hidden: none;
+  --block: block;
+  --inline: inline;
+  --inline-block: inline-block;
+  --flex: flex;
+  --inline-flex: inline-flex;
+  --grid: grid;
+  --inline-grid: inline-grid;
+}
 /*# sourceMappingURL=time-tracking-dashboard-main.36a68fd3.css.map */
