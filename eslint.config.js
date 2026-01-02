@@ -37,7 +37,6 @@ export default defineConfig([
     extends: ['js/recommended'],
     languageOptions: { globals: globals.browser },
     rules: {
-      // Recommend      'no-const-assign': ['error'],
       'no-dupe-args': 'error',
       'no-dupe-class-members': 'error',
       'no-dupe-keys': 'error',
@@ -87,6 +86,8 @@ export default defineConfig([
       'jsdoc/valid-types': ['warn'] // Recommend
     }
   },
+
+  // TODO This code is causing a serious bug
   perfectionist.configs['recommended-natural'],
   ...eslintPluginJsonc.configs['flat/base'],
   eslintConfigPrettier,
