@@ -7,6 +7,7 @@ import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended'
 import { defineConfig, globalIgnores } from 'eslint/config';
 import globals from 'globals';
 import * as jsoncParser from 'jsonc-eslint-parser';
+import perfectionist from 'eslint-plugin-perfectionist'
 
 export default defineConfig([
   globalIgnores(['dist/**', '.parcel-cache/**', 'node_modules/**']),
@@ -85,6 +86,7 @@ export default defineConfig([
       semi: 'error'
     }
   },
+  perfectionist.configs['recommended-natural'],
   ...eslintPluginJsonc.configs['flat/base'],
   eslintConfigPrettier,
   eslintPluginPrettierRecommended
