@@ -76,7 +76,7 @@
 
   /* Typography */
   --ff-rubik-sans-serif: var(--ff-rubik), sans-serif;
-  --ff-rubik: 'Rubik';
+  --ff-rubik: "Rubik";
   --font-style: normal;
   --font-size-fluid-0: clamp(0.75rem, 0.7232rem + 0.1339vw, 0.8438rem);
   --font-size-fluid-1: clamp(0.9375rem, 0.884rem + 0.2675vw, 1.1247rem);
@@ -86,11 +86,11 @@
   --font-size-fluid-5: clamp(2.2888rem, 1.9282rem + 1.8033vw, 3.5511rem);
 
   /* For Screen readers*/
-  --sr-only-width: 1px; 
-  --sr-only-height: 1px; 
-  --sr-only-padding: 0px; 
-  --sr-only-margin: -1px; 
-  --sr-only-border-width: 0; 
-  --sr-only-left: -1000px; 
+  --sr-only-width: 1px;
+  --sr-only-height: 1px;
+  --sr-only-padding: 0px;
+  --sr-only-margin: -1px;
+  --sr-only-border-width: 0;
+  --sr-only-left: -1000px;
   --sr-only-top: auto;
 }
