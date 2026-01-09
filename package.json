@@ -36,5 +36,8 @@
     "jsonc-eslint-parser": "^2.4.2",
     "parcel": "^2.16.3",
     "prettier": "3.7.4"
+  },
+  "dependencies": {
+    "open-props": "^1.7.17"
   }
 }
