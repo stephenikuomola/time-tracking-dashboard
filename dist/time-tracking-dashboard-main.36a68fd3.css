@@ -42,5 +42,35 @@
   --inline-flex: inline-flex;
   --grid: grid;
   --inline-grid: inline-grid;
+  --radius-7: 6px;
+  --radius-8: 8px;
+  --radius-9: 10px;
+  --radius-10: 12px;
+  --radius-11: 15px;
+  --radius-12: 20px;
+  --radius-13: 24px;
+  --radius-14: 26px;
+  --radius-15: 28px;
+  --radius-16: 30px;
+  --radius-17: 34px;
+  --radius-18: 36px;
+  --radius-19: 38px;
+  --radius-20: 40px;
+  --ff-rubik-sans-serif: var(--ff-rubik), sans-serif;
+  --ff-rubik: "Rubik";
+  --font-style: normal;
+  --font-size-fluid-0: clamp(.75rem, .7232rem + .1339vw, .8438rem);
+  --font-size-fluid-1: clamp(.9375rem, .884rem + .2675vw, 1.1247rem);
+  --font-size-fluid-2: clamp(1.1719rem, 1.0783rem + .4677vw, 1.4993rem);
+  --font-size-fluid-3: clamp(1.4648rem, 1.3124rem + .7624vw, 1.9985rem);
+  --font-size-fluid-4: clamp(1.8311rem, 1.5931rem + 1.1899vw, 2.664rem);
+  --font-size-fluid-5: clamp(2.2888rem, 1.9282rem + 1.8033vw, 3.5511rem);
+  --sr-only-width: 1px;
+  --sr-only-height: 1px;
+  --sr-only-padding: 0px;
+  --sr-only-margin: -1px;
+  --sr-only-border-width: 0;
+  --sr-only-left: -1000px;
+  --sr-only-top: auto;
 }
 /*# sourceMappingURL=time-tracking-dashboard-main.36a68fd3.css.map */
