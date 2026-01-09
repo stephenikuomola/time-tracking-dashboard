@@ -121,6 +121,7 @@ html {
 	text-size-adjust: none;
 	-moz-text-size-adjust: none;
 	-webkit-text-size-adjust: none;
+  font-family:var(--ff-rubik-sans-serif);
  }
 
 /* Set core root defaults */
@@ -227,6 +228,7 @@ body {
 	overflow: hidden;
 	/* Using a font-size of 18px */
 	font-size: 1.125rem;
+  background-color: var(--navy-950);
 }
 
 /* For screen readers */
@@ -242,3 +244,5 @@ body {
 	top: var(--sr-only-top); 
 	left: var(--sr-only-left); 
 }
+
+/* Dashboard Tracker Styles */

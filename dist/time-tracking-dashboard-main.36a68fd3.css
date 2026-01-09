@@ -1370,6 +1370,7 @@
 
 html {
   text-size-adjust: none;
+  font-family: var(--ff-rubik-sans-serif);
   overflow: hidden;
 }
 
@@ -1454,6 +1455,7 @@ a:not([class]) {
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--navy-950);
   width: 100%;
   min-height: 100vh;
   font-size: 1.125rem;

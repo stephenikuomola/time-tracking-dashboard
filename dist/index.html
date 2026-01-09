@@ -43,6 +43,107 @@
   <body>
     <main>
       <h1 class="sr-only">Jeremy Robson's Time Tracking Dashboard</h1>
+      <div class="dashboard-tracker">
+        <div class="dashboard-tracker__report-card">
+          <section class="report-card__user-profile">
+            <div class="user-profile__image-container">
+              <img src="/image-jeremy.083f3cba.png" alt="Jeremy Robson" class="image-container__image">
+            </div>
+            <div class="user-profile__text-content">
+              <p class="text-content__report-for">Report for</p>
+              <h2 class="text-content__user-name">Jeremy Robson</h2>
+            </div>
+          </section>
+          <ul class="time-period">
+            <li class="time-period_daily">
+            <input type="radio" name="time-period" id="daily">
+            <label for="daily">Daily</label>
+            </li>
+            <li class="time-period_weekly">
+              <input type="radio" name="time-period" id="weekly" checked="">
+              <label for="weekly">Weekly</label>
+            </li>
+            <li class="time-period_monthly">
+              <input type="radio" name="time-period" id="monthly">
+              <label for="monthly">Monthly</label>
+            </li>
+          </ul>
+        </div>
+        <ul class="activities-card">
+          <!-- Activity cards will be dynamically inserted here -->
+           <li class="activities-card_work">
+            <div class="activities-card_work_nav">
+              <p>Work</p>
+              <img src="/icon-ellipsis.de99ef7a.svg" alt="Ellipsis icon">
+            </div>
+            <div class="timeframes">
+              <p class="current">32hrs</p>
+              <p class="previous">
+                <span class="previous-text">Last Week - </span>36hrs
+              </p>
+            </div>
+           </li>
+           <li class="activities-card_play">
+            <div class="activities-card_play_nav">
+              <p>Play</p>
+              <img src="/icon-ellipsis.de99ef7a.svg" alt="Ellipsis icon">
+            </div>
+            <div class="timeframes">
+              <p class="current">10hrs</p>
+              <p class="previous">
+                <span class="previous-text">Last Week - </span>8hrs
+              </p>
+            </div>
+           </li>
+           <li class="activities-card_study">
+            <div class="activities-card_study_nav">
+              <p>Study</p>
+              <img src="/icon-ellipsis.de99ef7a.svg" alt="Ellipsis icon">
+            </div>
+            <div class="timeframes">
+              <p class="current">4hrs</p>
+              <p class="previous">
+                <span class="previous-text">Last Week - </span>7hrs
+            </p></div>
+           </li>
+           <li class="activities-card_exercise">
+            <div class="activities-card_exercise_nav">
+              <p>Exercise</p>
+              <img src="/icon-ellipsis.de99ef7a.svg" alt="Ellipsis icon">
+            </div>
+            <div class="timeframes">
+              <p class="current">4hrs</p>
+              <p class="previous">
+                <span class="previous-text">Last Week - </span>5hrs
+              </p>
+            </div>
+           </li>
+           <li class="activities-card_social">
+            <div class="activities-card_social_nav">
+              <p>Social</p>
+              <img src="/icon-ellipsis.de99ef7a.svg" alt="Ellipsis icon">
+            </div>
+            <div class="timeframes">
+              <p class="current">5hrs</p>
+              <p class="previous">
+                <span class="previous-text">Last Week - </span>10hrs
+              </p>
+            </div>
+           </li>
+           <li class="activities-card_self-care">
+            <div class="activities-card_self-care_nav">
+              <p>Self Care</p>
+              <img src="/icon-ellipsis.de99ef7a.svg" alt="Ellipsis icon">
+            </div>
+            <div class="timeframes">
+              <p class="current">2hrs</p>
+              <p class="previous">
+                <span class="previous-text">Last Week - </span>2hrs
+              </p>
+            </div>
+           </li>
+        </ul>
+      </div>
     </main>
   
 
