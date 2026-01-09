@@ -1459,4 +1459,17 @@ body {
   font-size: 1.125rem;
   overflow: hidden;
 }
+
+.sr-only {
+  white-space: nowrap;
+  width: var(--sr-only-width);
+  height: var(--sr-only-height);
+  padding: var(--sr-only-padding);
+  margin: var(--sr-only-margin);
+  border-width: var(--sr-only-border-width);
+  top: var(--sr-only-top);
+  left: var(--sr-only-left);
+  position: absolute;
+  overflow: hidden;
+}
 /*# sourceMappingURL=time-tracking-dashboard-main.36a68fd3.css.map */
