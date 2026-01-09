@@ -227,4 +227,18 @@ body {
 	overflow: hidden;
 	/* Using a font-size of 18px */
 	font-size: 1.125rem;
-	}
+}
+
+/* For screen readers */
+.sr-only {
+  position: absolute; 
+	white-space: nowrap; 
+	overflow: hidden; 
+	width: var(--sr-only-width); 
+	height: var(--sr-only-height); 
+	padding: var(--sr-only-padding);
+	margin: var(--sr-only-margin); 
+	border-width: var(--sr-only-border-width); 
+	top: var(--sr-only-top); 
+	left: var(--sr-only-left); 
+}
