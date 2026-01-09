@@ -3,11 +3,11 @@ import js from '@eslint/js';
 import eslintConfigPrettier from 'eslint-config-prettier/flat';
 import jsdoc from 'eslint-plugin-jsdoc';
 import eslintPluginJsonc from 'eslint-plugin-jsonc';
+import perfectionist from 'eslint-plugin-perfectionist'
 import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended';
 import { defineConfig, globalIgnores } from 'eslint/config';
 import globals from 'globals';
 import * as jsoncParser from 'jsonc-eslint-parser';
-import perfectionist from 'eslint-plugin-perfectionist'
 
 export default defineConfig([
   globalIgnores(['dist/**', '.parcel-cache/**', 'node_modules/**']),
