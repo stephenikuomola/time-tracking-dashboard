@@ -1,12 +1,22 @@
 /* The Props */
+@import "npm:open-props/open-props.min.css";
+
+/* The Prop Colors */
+@import "npm:open-props/colors-hsl.min.css";
 
 /* The Prop Borders */
+@import "npm:open-props/borders.min.css";
 
-/* The Prop Sizes */
-
-/* The Prop Fonts */
+/* The Prop Media */
+@import "npm:open-props/media.min.css";
 
 /* The Prop Easings */
+
+/* The Prop Z-indexes */
+@import "npm:open-props/zindex.min.css";
+
+/* The Prop Fonts */
+@import "npm:open-props/fonts.min.css";
 
 :root {
   /* The Colors */
@@ -94,3 +104,127 @@
   --sr-only-left: -1000px;
   --sr-only-top: auto;
 }
+
+/* Global Styles */
+* {
+	margin: 0; 
+	padding: 0; 
+}
+
+*, *::before, *::after {
+	box-sizing: border-box;
+}
+
+html {
+	overflow: hidden;
+	/* The style below prevents font-style inflation */
+	text-size-adjust: none;
+	-moz-text-size-adjust: none;
+	-webkit-text-size-adjust: none;
+ }
+
+/* Set core root defaults */
+html:focus-within { 
+	scroll-behavior: smooth; 
+}
+
+/* Avoid text overflow */
+p, h1, h2, h3, h4, h5, h6 {
+	 overflow-wrap: break-word;
+}
+
+/* Balance text wrappings on the heading */
+h1, h2, h3, h4, h5, h6 {
+	text-wrap: balance; 
+}
+
+/* Improve line wrapping */
+p {
+	text-wrap: pretty; 
+}
+
+/* Default line heights for paragraphs, heading, text in button, inputs, and label*/
+h1, h2, h3, h4, p, button, input, label {
+  line-height: var(--font-lineheight-0);
+}
+
+ /* Improve media defaults */
+ img, picture, video, canvas, svg {
+  max-width: 100%;
+  height: auto;
+  display: var(--block);
+}
+
+/* All buttons should have this style */
+button {
+  appearance: none;
+  background: none;
+  border: none;
+  font-family: inherit;
+  color: inherit;
+}
+
+/* Inherits fonts for input and buttons */
+input, button, textarea, select { 
+	font: inherit; 
+}
+
+
+/* Remove the text-decoration style for all anchor elements */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Remove the mark of the list items */
+li {
+  list-style-type: none;
+  color: inherit; 
+}
+
+/* We make sure that the text areas without rows are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* All anchor and button elements have an outline of none when focused */
+a:focus,
+button:focus {
+  outline: none;
+}
+
+/* An elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Anything that has been anchored to should have an extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+	overflow: hidden;
+	/* Using a font-size of 18px */
+	font-size: 1.125rem;
+	}
