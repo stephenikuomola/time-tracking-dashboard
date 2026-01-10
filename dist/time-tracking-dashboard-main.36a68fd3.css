@@ -1307,6 +1307,7 @@
   --space-17: clamp(2.25rem, 2.1607rem + .4464vw, 2.5625rem);
   --space-18: clamp(3rem, 2.8929rem + .5357vw, 3.375rem);
   --space-19: clamp(4.5rem, 4.3393rem + .8036vw, 5.0625rem);
+  --space-20: clamp(2rem, .2232rem + 6.0714vw, 5.6875rem);
   --space-11-12: clamp(.1875rem, .1161rem + .3571vw, .4375rem);
   --space-12-13: clamp(.375rem, .3036rem + .3571vw, .625rem);
   --space-13-14: clamp(.5625rem, .4732rem + .4464vw, .875rem);
@@ -1400,12 +1401,18 @@ img, picture, video, canvas, svg {
   display: var(--block);
 }
 
-button {
+button, input {
   appearance: none;
   color: inherit;
   background: none;
   border: none;
   font-family: inherit;
+}
+
+input {
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
 }
 
 input, button, textarea, select {
@@ -1456,9 +1463,11 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--navy-950);
+  align-items: center;
   width: 100%;
   min-height: 100vh;
   font-size: 1.125rem;
+  display: flex;
   overflow: hidden;
 }
 
@@ -1473,5 +1482,79 @@ body {
   left: var(--sr-only-left);
   position: absolute;
   overflow: hidden;
+}
+
+.dashboard-tracker {
+  gap: var(--size-fluid-3);
+  width: min(87.2%, 69.75rem);
+  margin-inline: auto;
+}
+
+.dashboard-tracker__report-card {
+  background-color: var(--navy-900);
+  border-radius: var(--radius-11);
+  padding-block-end: var(--size-fluid-3);
+}
+
+.report-card__user-profile {
+  background-color: var(--purple-600);
+  border-radius: var(--radius-11);
+  display: var(--flex);
+  align-items: center;
+  gap: var(--space-16-17);
+  padding-block-start: var(--size-7);
+  padding-block-end: var(--space-20);
+  padding-inline-start: var(--size-7);
+}
+
+.text-content__report-for {
+  color: var(--navy-200);
+  font-style: var(--font-style);
+  font-weight: var(--font-weight-4);
+  font-size: var(--font-size-fluid-0);
+  font-feature-settings: "liga" off, "clig" off;
+  line-height: 1.2;
+}
+
+.text-content__user-name {
+  color: var(--white);
+  font-style: var(--font-style);
+  font-weight: var(--font-weight-3);
+  font-feature-settings: "liga" off, "clig" off;
+  font-size: var(--font-size-fluid-2);
+  line-height: 1.17;
+}
+
+.user-profile__image-container img {
+  width: var(--size-fluid-5);
+  height: var(--size-fluid-5);
+  border: 3px solid var(--white);
+  border-radius: 50%;
+}
+
+.time-period {
+  justify-content: space-evenly;
+  margin-block-start: var(--size-fluid-3);
+  display: flex;
+}
+
+.time-period label {
+  font-feature-settings: "liga" off, "clig" off;
+  font-style: var(--font-style);
+  font-weight: var(--font-weight-4);
+  color: var(--purple-500);
+  line-height: 1.12;
+  font-size: var(--font-size-fluid-1);
+  cursor: pointer;
+}
+
+input[type="radio"]:checked + label {
+  color: var(--white);
+}
+
+.activities-card {
+  display: var(--grid);
+  gap: var(--size-fluid-3);
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
 /*# sourceMappingURL=time-tracking-dashboard-main.36a68fd3.css.map */

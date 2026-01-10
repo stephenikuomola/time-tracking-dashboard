@@ -45,6 +45,7 @@
   --space-17: clamp(2.25rem, 2.1607rem + 0.4464vw, 2.5625rem);
   --space-18: clamp(3rem, 2.8929rem + 0.5357vw, 3.375rem);
   --space-19: clamp(4.5rem, 4.3393rem + 0.8036vw, 5.0625rem);
+  --space-20: clamp(2rem, 0.2232rem + 6.0714vw, 5.6875rem);
   --space-11-12: clamp(0.1875rem, 0.1161rem + 0.3571vw, 0.4375rem);
   --space-12-13: clamp(0.375rem, 0.3036rem + 0.3571vw, 0.625rem);
   --space-13-14: clamp(0.5625rem, 0.4732rem + 0.4464vw, 0.875rem);
@@ -107,57 +108,82 @@
 
 /* Global Styles */
 * {
-	margin: 0; 
-	padding: 0; 
+  margin: 0;
+  padding: 0;
 }
 
-*, *::before, *::after {
-	box-sizing: border-box;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 html {
-	overflow: hidden;
-	/* The style below prevents font-style inflation */
-	text-size-adjust: none;
-	-moz-text-size-adjust: none;
-	-webkit-text-size-adjust: none;
-  font-family:var(--ff-rubik-sans-serif);
- }
+  overflow: hidden;
+  /* The style below prevents font-style inflation */
+  text-size-adjust: none;
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  font-family: var(--ff-rubik-sans-serif);
+}
 
 /* Set core root defaults */
-html:focus-within { 
-	scroll-behavior: smooth; 
+html:focus-within {
+  scroll-behavior: smooth;
 }
 
 /* Avoid text overflow */
-p, h1, h2, h3, h4, h5, h6 {
-	 overflow-wrap: break-word;
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
 }
 
 /* Balance text wrappings on the heading */
-h1, h2, h3, h4, h5, h6 {
-	text-wrap: balance; 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
 }
 
 /* Improve line wrapping */
 p {
-	text-wrap: pretty; 
+  text-wrap: pretty;
 }
 
 /* Default line heights for paragraphs, heading, text in button, inputs, and label*/
-h1, h2, h3, h4, p, button, input, label {
+h1,
+h2,
+h3,
+h4,
+p,
+button,
+input,
+label {
   line-height: var(--font-lineheight-0);
 }
 
- /* Improve media defaults */
- img, picture, video, canvas, svg {
+/* Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
   max-width: 100%;
   height: auto;
   display: var(--block);
 }
 
 /* All buttons should have this style */
-button {
+button,
+input {
   appearance: none;
   background: none;
   border: none;
@@ -165,11 +191,20 @@ button {
   color: inherit;
 }
 
-/* Inherits fonts for input and buttons */
-input, button, textarea, select { 
-	font: inherit; 
+/* Hide the input radio */
+input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
 }
 
+/* Inherits fonts for input and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
 
 /* Remove the text-decoration style for all anchor elements */
 a {
@@ -180,7 +215,7 @@ a {
 /* Remove the mark of the list items */
 li {
   list-style-type: none;
-  color: inherit; 
+  color: inherit;
 }
 
 /* We make sure that the text areas without rows are not tiny */
@@ -208,7 +243,7 @@ a:not([class]) {
 /* Remove all animations and transitions for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
   html:focus-within {
-   scroll-behavior: auto;
+    scroll-behavior: auto;
   }
   *,
   *::before,
@@ -225,24 +260,106 @@ body {
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-	overflow: hidden;
-	/* Using a font-size of 18px */
-	font-size: 1.125rem;
+  overflow: hidden;
+  /* Using a font-size of 18px */
+  font-size: 1.125rem;
   background-color: var(--navy-950);
+  display: flex;
+  align-items: center;
 }
 
 /* For screen readers */
 .sr-only {
-  position: absolute; 
-	white-space: nowrap; 
-	overflow: hidden; 
-	width: var(--sr-only-width); 
-	height: var(--sr-only-height); 
-	padding: var(--sr-only-padding);
-	margin: var(--sr-only-margin); 
-	border-width: var(--sr-only-border-width); 
-	top: var(--sr-only-top); 
-	left: var(--sr-only-left); 
+  position: absolute;
+  white-space: nowrap;
+  overflow: hidden;
+  width: var(--sr-only-width);
+  height: var(--sr-only-height);
+  padding: var(--sr-only-padding);
+  margin: var(--sr-only-margin);
+  border-width: var(--sr-only-border-width);
+  top: var(--sr-only-top);
+  left: var(--sr-only-left);
 }
 
 /* Dashboard Tracker Styles */
+.dashboard-tracker {
+  width: min(87.2%, 69.75rem);
+  margin-inline: auto;
+  gap: var(--size-fluid-3);
+  /* TODO Code to make dashboard responsive without media query. The code breaks when the viewport exceeds 1000px */
+}
+
+.dashboard-tracker__report-card {
+  background-color: var(--navy-900);
+  border-radius: var(--radius-11);
+  padding-block-end: var(--size-fluid-3);
+}
+
+.report-card__user-profile {
+  background-color: var(--purple-600);
+  border-radius: var(--radius-11);
+  display: var(--flex);
+  align-items: center;
+  gap: var(--space-16-17);
+  padding-inline-start: var(--size-7);
+  padding-block-start: var(--size-7);
+  padding-block-end: var(--space-20);
+}
+
+.text-content__report-for {
+  color: var(--navy-200);
+  font-style: var(--font-style);
+  font-weight: var(--font-weight-4);
+  font-size: var(--font-size-fluid-0);
+  font-feature-settings:
+    "liga" off,
+    "clig" off;
+  line-height: 1.2;
+}
+
+.text-content__user-name {
+  color: var(--white);
+  font-style: var(--font-style);
+  font-weight: var(--font-weight-3);
+  font-feature-settings:
+    "liga" off,
+    "clig" off;
+  font-size: var(--font-size-fluid-2);
+  line-height: 1.17;
+}
+
+.user-profile__image-container img {
+  width: var(--size-fluid-5);
+  height: var(--size-fluid-5);
+  border: 3px solid var(--white);
+  border-radius: 50%;
+}
+
+.time-period {
+  display: flex;
+  margin-block-start: var(--size-fluid-3);
+  justify-content: space-evenly;
+}
+
+.time-period label {
+  font-feature-settings:
+    "liga" off,
+    "clig" off;
+  font-style: var(--font-style);
+  font-weight: var(--font-weight-4);
+  line-height: 1.12;
+  color: var(--purple-500);
+  font-size: var(--font-size-fluid-1);
+  cursor: pointer;
+}
+
+input[type="radio"]:checked + label {
+  color: var(--white);
+}
+
+.activities-card {
+  display: var(--grid);
+  gap: var(--size-fluid-3);
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
