@@ -5,11 +5,11 @@
   "source": "index.html",
   "scripts": {
     "start": "parcel index.html",
-    "browserslist": "> 0.3%, last 2 versions, Firefox ESR, not dead",
     "lint:prettier": "prettier --write .",
     "lint": "npx eslint src/*.js",
     "lint:eslint": "npx eslint --fix ."
   },
+  "browserslist": "> 0.3%, last 2 versions, Firefox ESR, not dead",
   "keywords": [
     "HTML",
     "CSS",
