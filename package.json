@@ -39,5 +39,11 @@
   },
   "dependencies": {
     "open-props": "^1.7.17"
+  },
+  "@parcel/transformer-css": {
+    "drafts": {
+      "nesting": true,
+      "customMedia": true
+    }
   }
 }
