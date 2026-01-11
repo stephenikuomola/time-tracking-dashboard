@@ -119,7 +119,6 @@
 }
 
 html {
-  overflow: hidden;
   /* The style below prevents font-style inflation */
   text-size-adjust: none;
   -moz-text-size-adjust: none;
@@ -260,7 +259,6 @@ body {
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow: hidden;
   /* Using a font-size of 18px */
   font-size: 1.125rem;
   background-color: var(--navy-950);
@@ -282,12 +280,19 @@ body {
   left: var(--sr-only-left);
 }
 
+@custom-media --md-n-above (width >= 744px);
+@custom-media --lg-n-above (width >=1024px);
+@custom-media --xl-n-above (width >= 1200px);
+
 /* Dashboard Tracker Styles */
 .dashboard-tracker {
   width: min(87.2%, 69.75rem);
   margin-inline: auto;
+  display: var(--grid);
   gap: var(--size-fluid-3);
-  /* TODO Code to make dashboard responsive without media query. The code breaks when the viewport exceeds 1000px */
+  @media (--lg-n-above) {
+    grid-template-columns: 240px 1fr;
+  }
 }
 
 .dashboard-tracker__report-card {
@@ -305,6 +310,11 @@ body {
   padding-inline-start: var(--size-7);
   padding-block-start: var(--size-7);
   padding-block-end: var(--space-20);
+
+  @media (--lg-n-above) {
+    align-items: unset;
+    flex-direction: column;
+  }
 }
 
 .text-content__report-for {
@@ -327,6 +337,10 @@ body {
     "clig" off;
   font-size: var(--font-size-fluid-2);
   line-height: 1.17;
+
+  @media (--lg-n-above) {
+    font-size: 2.5rem;
+  }
 }
 
 .user-profile__image-container img {
@@ -340,6 +354,12 @@ body {
   display: flex;
   margin-block-start: var(--size-fluid-3);
   justify-content: space-evenly;
+
+  @media (--lg-n-above) {
+    flex-direction: column;
+    padding-inline-start: var(--size-7);
+    gap: var(--size-4);
+  }
 }
 
 .time-period label {
@@ -358,8 +378,113 @@ input[type="radio"]:checked + label {
   color: var(--white);
 }
 
-.activities-card {
+.activities-cards {
   display: var(--grid);
   gap: var(--size-fluid-3);
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  @media (--lg-n-above) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.activities-card_wrapper {
+  /* margin-block-start: var(--size-fluid-4); */
+  margin-block-start: 2.5rem;
+  border-radius: var(--radius-11);
+  background-color: var(--navy-900);
+  padding-block: var(--size-fluid-3);
+  padding-inline: var(--size-fluid-3);
+  position: relative;
+}
+
+.activities-card_wrapper::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  padding-block: var(--size-fluid-4);
+  left: 0rem;
+  top: -2.5rem;
+  z-index: -3;
+  border-radius: var(--radius-11);
+}
+
+.work::before {
+  background-color: var(--orange-300);
+}
+
+.play::before {
+  background-color: var(--blue-300);
+}
+
+.study::before {
+  background-color: var(--pink-400);
+}
+
+.exercise::before {
+  background-color: var(--green-400);
+}
+
+.social::before {
+  background-color: var(--purple-700);
+}
+
+.self-care::before {
+  background-color: var(--yellow-300);
+}
+
+.activities-card_wrapper_nav {
+  display: var(--flex);
+  justify-content: space-between;
+  align-items: center;
+  margin-block-end: var(--size-fluid-2);
+}
+
+.activities-card_wrapper_nav p {
+  font-style: var(--font-style);
+  font-weight: var(--font-weight-5);
+  font-size: var(--font-size-fluid-1);
+  line-height: 1.17;
+  color: var(--white);
+  font-feature-settings:
+    "liga" off,
+    "clig" off;
+}
+
+.timeframes {
+  display: var(--flex);
+  justify-content: space-between;
+  align-items: center;
+
+  @media (--md-n-above) {
+    flex-direction: column;
+    justify-content: unset;
+    align-items: unset;
+    gap: var(--size-2);
+  }
+}
+
+.current {
+  font-size: var(--font-size-fluid-3);
+  color: var(--white);
+  font-style: var(--font-style);
+  font-weight: var(--font-weight-3);
+  line-height: 1.19;
+  font-feature-settings:
+    "liga" off,
+    "clig" off;
+
+  @media (--md-n-above) {
+    font-size: 3.5rem;
+  }
+}
+
+.previous {
+  color: var(--navy-200);
+  font-size: var(--font-size-fluid-0);
+  font-weight: var(--font-weight-4);
+  line-height: 1.2;
+  font-style: var(--font-style);
+  font-feature-settings:
+    "liga" off,
+    "clig" off;
 }
