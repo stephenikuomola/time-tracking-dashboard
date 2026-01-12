@@ -69,7 +69,7 @@ function renderTimePeriodAndActivities(period = 'weekly') {
       `;
     });
   } catch (error) {
-    const message = error instanceof Error ? error.message : String(error);
+    console.error(error instanceof Error ? error.message : String(error));
   }
 }
 
