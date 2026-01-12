@@ -714,6 +714,93 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 }
 
 },{}],"8QZSJ":[function(require,module,exports,__globalThis) {
+// Import JSON data for activities
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+var _dataJson = require("../data.json");
+var _dataJsonDefault = parcelHelpers.interopDefault(_dataJson);
+const previousLabels = {
+    daily: 'Yesterday',
+    monthly: 'Last Month',
+    weekly: 'Last Week'
+};
+console.log(previousLabels);
+const EMPTY_ARRAY_LENGTH = 0;
+const activities = /**@type {NodeListOf<HTMLParagraphElement>} */ document.querySelectorAll('.activities-card_wrapper_nav > p');
+const timePeriodInputs = /**@type {NodeListOf<HTMLInputElement>} */ document.querySelectorAll('input[name="time-period"]');
+console.log(timePeriodInputs);
+const activitiesCard = /**@type {NodeListOf<HTMLDivElement>} */ document.querySelectorAll('.activities-card_wrapper');
+console.log(activitiesCard);
+/**
+ * This function renders the time period and activities titles
+ * from the imported JSON data to the respective HTML elements.
+ * @param {string} period - The time period to render (default is 'weekly').
+ * @returns {void}
+ */ function renderTimePeriodAndActivities(period = 'weekly') {
+    try {
+        const validPeriods = [
+            'daily',
+            'weekly',
+            'monthly'
+        ];
+        if (!Array.isArray((0, _dataJsonDefault.default)) || (0, _dataJsonDefault.default).length === EMPTY_ARRAY_LENGTH) throw new Error(`Data is missing or empty`);
+        if (!validPeriods.includes(period)) throw new Error(`${period} is an invalid period`);
+        const dataValues = (0, _dataJsonDefault.default);
+        const validPeriod = /** @type {'daily' | 'weekly' | 'monthly'} */ period;
+        dataValues.forEach(function(dataValue, index) {
+            // render the activities title
+            activities[index].textContent = dataValue.title;
+            // We want to obtain the current hours, the previous hours and the previous label
+            const previousLabel = previousLabels[validPeriod];
+            const { current, previous } = dataValue.timeframes[validPeriod];
+            // Get the current hours, previous hours, and previous label elements
+            const activityCard = activitiesCard[index];
+            const currentHoursElement = /**@type {HTMLParagraphElement} */ activityCard.querySelector('.current');
+            const previousHoursElement = /**@type {HTMLParagraphElement}*/ activityCard.querySelector('.previous');
+            // Render the current hours and previous hours with labels
+            currentHoursElement.textContent = `${current}hrs`;
+            previousHoursElement.innerHTML = `<span class="previous-text">${previousLabel} - </span> 
+        ${previous}hrs
+      `;
+        });
+    } catch (error) {
+        const message = error instanceof Error ? error.message : String(error);
+        console.log(` You have an issue as ${message}`);
+    }
+}
+renderTimePeriodAndActivities();
+
+},{"../data.json":"4UYPk","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT"}],"4UYPk":[function(require,module,exports,__globalThis) {
+module.exports = JSON.parse("[{\"title\":\"Work\",\"timeframes\":{\"daily\":{\"current\":5,\"previous\":7},\"weekly\":{\"current\":32,\"previous\":36},\"monthly\":{\"current\":103,\"previous\":128}}},{\"title\":\"Play\",\"timeframes\":{\"daily\":{\"current\":1,\"previous\":2},\"weekly\":{\"current\":10,\"previous\":8},\"monthly\":{\"current\":23,\"previous\":29}}},{\"title\":\"Study\",\"timeframes\":{\"daily\":{\"current\":0,\"previous\":1},\"weekly\":{\"current\":4,\"previous\":7},\"monthly\":{\"current\":13,\"previous\":19}}},{\"title\":\"Exercise\",\"timeframes\":{\"daily\":{\"current\":1,\"previous\":1},\"weekly\":{\"current\":4,\"previous\":5},\"monthly\":{\"current\":11,\"previous\":18}}},{\"title\":\"Social\",\"timeframes\":{\"daily\":{\"current\":1,\"previous\":3},\"weekly\":{\"current\":5,\"previous\":10},\"monthly\":{\"current\":21,\"previous\":23}}},{\"title\":\"Self Care\",\"timeframes\":{\"daily\":{\"current\":0,\"previous\":1},\"weekly\":{\"current\":2,\"previous\":2},\"monthly\":{\"current\":7,\"previous\":11}}}]");
+
+},{}],"jnFvT":[function(require,module,exports,__globalThis) {
+exports.interopDefault = function(a) {
+    return a && a.__esModule ? a : {
+        default: a
+    };
+};
+exports.defineInteropFlag = function(a) {
+    Object.defineProperty(a, '__esModule', {
+        value: true
+    });
+};
+exports.exportAll = function(source, dest) {
+    Object.keys(source).forEach(function(key) {
+        if (key === 'default' || key === '__esModule' || Object.prototype.hasOwnProperty.call(dest, key)) return;
+        Object.defineProperty(dest, key, {
+            enumerable: true,
+            get: function() {
+                return source[key];
+            }
+        });
+    });
+    return dest;
+};
+exports.export = function(dest, destName, get) {
+    Object.defineProperty(dest, destName, {
+        enumerable: true,
+        get: get
+    });
+};
 
 },{}]},["hkhYT","8QZSJ"], "8QZSJ", "parcelRequiref3e3", {})
 

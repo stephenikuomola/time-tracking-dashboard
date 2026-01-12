@@ -1389,7 +1389,7 @@ img, picture, video, canvas, svg {
   display: var(--block);
 }
 
-button, input {
+button {
   appearance: none;
   color: inherit;
   background: none;
