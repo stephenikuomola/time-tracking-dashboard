@@ -723,13 +723,11 @@ const previousLabels = {
     monthly: 'Last Month',
     weekly: 'Last Week'
 };
-console.log(previousLabels);
 const EMPTY_ARRAY_LENGTH = 0;
 const activities = /**@type {NodeListOf<HTMLParagraphElement>} */ document.querySelectorAll('.activities-card_wrapper_nav > p');
 const timePeriodInputs = /**@type {NodeListOf<HTMLInputElement>} */ document.querySelectorAll('input[name="time-period"]');
 console.log(timePeriodInputs);
 const activitiesCard = /**@type {NodeListOf<HTMLDivElement>} */ document.querySelectorAll('.activities-card_wrapper');
-console.log(activitiesCard);
 /**
  * This function renders the time period and activities titles
  * from the imported JSON data to the respective HTML elements.
