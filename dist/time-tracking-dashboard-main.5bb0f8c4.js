@@ -764,7 +764,6 @@ console.log(activitiesCard);
         });
     } catch (error) {
         const message = error instanceof Error ? error.message : String(error);
-        console.log(` You have an issue as ${message}`);
     }
 }
 renderTimePeriodAndActivities();
