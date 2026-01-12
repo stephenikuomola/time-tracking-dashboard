@@ -11,6 +11,7 @@
 @import "npm:open-props/media.min.css";
 
 /* The Prop Easings */
+@import "npm:open-props/easings.min.css";
 
 /* The Prop Z-indexes */
 @import "npm:open-props/zindex.min.css";
@@ -20,6 +21,7 @@
 
 :root {
   /* The Colors */
+  --navy-800: hsl(235, 41%, 34%, 1);
   --navy-950: hsl(226, 43%, 10%);
   --navy-900: hsl(235, 46%, 20%);
   --purple-500: hsl(235, 45%, 61%);
@@ -283,6 +285,7 @@ body {
 @custom-media --md-n-above (width >= 744px);
 @custom-media --lg-n-above (width >=1024px);
 @custom-media --xl-n-above (width >= 1200px);
+@custom-media --mouse (hover) and (pointer: fine);
 
 /* Dashboard Tracker Styles */
 .dashboard-tracker {
@@ -388,13 +391,20 @@ input[type="radio"]:checked + label {
 }
 
 .activities-card_wrapper {
-  /* margin-block-start: var(--size-fluid-4); */
   margin-block-start: 2.5rem;
   border-radius: var(--radius-11);
   background-color: var(--navy-900);
   padding-block: var(--size-fluid-3);
   padding-inline: var(--size-fluid-3);
   position: relative;
+
+  @media (--mouse) {
+    &:hover {
+      cursor: pointer;
+      background-color: var(--navy-800);
+      transition: background-color 0.5s var(--ease-out-3);
+    }
+  }
 }
 
 .activities-card_wrapper::before {
@@ -406,6 +416,42 @@ input[type="radio"]:checked + label {
   top: -2.5rem;
   z-index: -3;
   border-radius: var(--radius-11);
+}
+
+.activities-card_work {
+  background-image: url(../assets/images/icon-work.svg);
+  background-repeat: no-repeat;
+  background-position: right 1.09rem top -0.7rem;
+}
+
+.activities-card_play {
+  background-image: url(../assets/images/icon-play.svg);
+  background-repeat: no-repeat;
+  background-position: right 1.09rem top -0.7rem;
+}
+
+.activities-card_study {
+  background-image: url(../assets/images/icon-study.svg);
+  background-repeat: no-repeat;
+  background-position: right 1.09rem top -0.7rem;
+}
+
+.activities-card_exercise {
+  background-image: url(../assets/images/icon-exercise.svg);
+  background-repeat: no-repeat;
+  background-position: right 1.09rem top 0rem;
+}
+
+.activities-card_social {
+  background-image: url(../assets/images/icon-social.svg);
+  background-repeat: no-repeat;
+  background-position: right 1.09rem top -1.1rem;
+}
+
+.activities-card_self-care {
+  background-image: url(../assets/images/icon-self-care.svg);
+  background-repeat: no-repeat;
+  background-position: right 1.09rem top -0.95rem;
 }
 
 .work::before {
