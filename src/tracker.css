@@ -183,8 +183,7 @@ svg {
 }
 
 /* All buttons should have this style */
-button,
-input {
+button {
   appearance: none;
   background: none;
   border: none;
