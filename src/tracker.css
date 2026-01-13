@@ -261,7 +261,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   /* Using a font-size of 18px */
-  font-size: 1.125rem;
+  font-size: calc(18 / 16 * 1rem);
   background-color: var(--navy-950);
   display: flex;
   align-items: center;
@@ -341,7 +341,7 @@ body {
   line-height: 1.17;
 
   @media (--lg-n-above) {
-    font-size: 2.5rem;
+    font-size: calc(40 / 16 * 1rem);
   }
 }
 
@@ -519,10 +519,10 @@ input[type="radio"]:checked + label {
     "clig" off;
 
   @media (--md-n-above) {
-    font-size: 3rem;
+    font-size: calc(48 / 16 * 1rem);
 
     @media (--lg-n-above) {
-      font-size: 3.5rem;
+      font-size: calc(56 / 16 * 1rem);
     }
   }
 }
