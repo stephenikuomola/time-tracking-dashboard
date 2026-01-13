@@ -22,6 +22,10 @@ const activitiesCard = /**@type {NodeListOf<HTMLDivElement>} */ (
   document.querySelectorAll('.activities-card_wrapper')
 );
 
+window.addEventListener('load', () => {
+  renderTimePeriodAndActivities();
+});
+
 /**
  * Handles the change event for time period inputs.
  * @param {Event} evtObj - The change event object.
@@ -89,5 +93,3 @@ function renderTimePeriodAndActivities(period = 'weekly') {
 timePeriodInputs.forEach(function (input) {
   input.addEventListener('change', handleTimePeriodChange);
 });
-
-renderTimePeriodAndActivities();

@@ -728,6 +728,9 @@ const activities = /**@type {NodeListOf<HTMLParagraphElement>} */ document.query
 const timePeriodInputs = /**@type {NodeListOf<HTMLInputElement>} */ document.querySelectorAll('input[name="time-period"]');
 console.log(timePeriodInputs);
 const activitiesCard = /**@type {NodeListOf<HTMLDivElement>} */ document.querySelectorAll('.activities-card_wrapper');
+window.addEventListener('load', ()=>{
+    renderTimePeriodAndActivities();
+});
 /**
  * Handles the change event for time period inputs.
  * @param {Event} evtObj - The change event object.
@@ -779,7 +782,6 @@ const activitiesCard = /**@type {NodeListOf<HTMLDivElement>} */ document.querySe
 /* Listen for the time period input changes */ timePeriodInputs.forEach(function(input) {
     input.addEventListener('change', handleTimePeriodChange);
 });
-renderTimePeriodAndActivities();
 
 },{"../data.json":"4UYPk","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT"}],"4UYPk":[function(require,module,exports,__globalThis) {
 module.exports = JSON.parse("[{\"title\":\"Work\",\"timeframes\":{\"daily\":{\"current\":5,\"previous\":7},\"weekly\":{\"current\":32,\"previous\":36},\"monthly\":{\"current\":103,\"previous\":128}}},{\"title\":\"Play\",\"timeframes\":{\"daily\":{\"current\":1,\"previous\":2},\"weekly\":{\"current\":10,\"previous\":8},\"monthly\":{\"current\":23,\"previous\":29}}},{\"title\":\"Study\",\"timeframes\":{\"daily\":{\"current\":0,\"previous\":1},\"weekly\":{\"current\":4,\"previous\":7},\"monthly\":{\"current\":13,\"previous\":19}}},{\"title\":\"Exercise\",\"timeframes\":{\"daily\":{\"current\":1,\"previous\":1},\"weekly\":{\"current\":4,\"previous\":5},\"monthly\":{\"current\":11,\"previous\":18}}},{\"title\":\"Social\",\"timeframes\":{\"daily\":{\"current\":1,\"previous\":3},\"weekly\":{\"current\":5,\"previous\":10},\"monthly\":{\"current\":21,\"previous\":23}}},{\"title\":\"Self Care\",\"timeframes\":{\"daily\":{\"current\":0,\"previous\":1},\"weekly\":{\"current\":2,\"previous\":2},\"monthly\":{\"current\":7,\"previous\":11}}}]");
