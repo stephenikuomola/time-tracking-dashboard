@@ -4,6 +4,7 @@
   "description": "![Design preview for the Time tracking dashboard coding challenge](./preview.jpg)",
   "source": "index.html",
   "scripts": {
+    "build": "parcel build index.html --dist-dir ./dist",
     "start": "parcel index.html",
     "lint:prettier": "prettier --write .",
     "lint": "npx eslint src/*.js",
