@@ -724,13 +724,53 @@ const previousLabels = {
     weekly: 'Last Week'
 };
 const EMPTY_ARRAY_LENGTH = 0;
+const INCREMENT_HOURS_BY = 1;
+const interval = 4000; // 4 seconds
 const activities = /**@type {NodeListOf<HTMLParagraphElement>} */ document.querySelectorAll('.activities-card_wrapper_nav > p');
 const timePeriodInputs = /**@type {NodeListOf<HTMLInputElement>} */ document.querySelectorAll('input[name="time-period"]');
-console.log(timePeriodInputs);
 const activitiesCard = /**@type {NodeListOf<HTMLDivElement>} */ document.querySelectorAll('.activities-card_wrapper');
 window.addEventListener('load', ()=>{
     renderTimePeriodAndActivities();
 });
+/**
+ * This function animates the current hours number.
+ * @param {HTMLParagraphElement} currentHoursElement - The current hours element.
+ * @param {number} current - The current hours number.
+ * @returns {void}
+ */ function animateCurrentHours(currentHoursElement, current) {
+    let startHours = 0;
+    const endHours = current;
+    let duration = Math.floor(interval / endHours);
+    const counter = setInterval(function() {
+        startHours += INCREMENT_HOURS_BY;
+        currentHoursElement.textContent = `${startHours}hrs`;
+        if (startHours === endHours) clearInterval(counter);
+        if (startHours > endHours) {
+            currentHoursElement.textContent = `${endHours}hrs`;
+            clearInterval(counter);
+        }
+    }, duration);
+}
+/**
+ * This function animates the previous hours number.
+ * @param {HTMLParagraphElement} previousHoursElement - The previous hours element.
+ * @param {number} previous - The previous hours number as a string.
+ * @param {string} previousLabel - The label for the previous hours.
+ * @returns {void}
+ */ function animatePreviousHours(previousHoursElement, previous, previousLabel) {
+    let startHours = 0;
+    const endHours = previous;
+    let duration = Math.floor(interval / endHours);
+    const counter = setInterval(function() {
+        startHours += INCREMENT_HOURS_BY;
+        previousHoursElement.innerHTML = `<span class="previous-text">${previousLabel} - </span> ${startHours}hrs`;
+        if (startHours === endHours) clearInterval(counter);
+        if (startHours > endHours) {
+            previousHoursElement.innerHTML = `<span class="previous-text">${previousLabel} - </span> ${endHours}hrs`;
+            clearInterval(counter);
+        }
+    }, duration);
+}
 /**
  * Handles the change event for time period inputs.
  * @param {Event} evtObj - The change event object.
@@ -769,11 +809,8 @@ window.addEventListener('load', ()=>{
             const activityCard = activitiesCard[index];
             const currentHoursElement = /**@type {HTMLParagraphElement} */ activityCard.querySelector('.current');
             const previousHoursElement = /**@type {HTMLParagraphElement}*/ activityCard.querySelector('.previous');
-            // Render the current hours and previous hours with labels
-            currentHoursElement.textContent = `${current}hrs`;
-            previousHoursElement.innerHTML = `<span class="previous-text">${previousLabel} - </span> 
-        ${previous}hrs
-      `;
+            animateCurrentHours(currentHoursElement, current);
+            animatePreviousHours(previousHoursElement, previous, previousLabel);
         });
     } catch (error) {
         console.error(error instanceof Error ? error.message : String(error));
