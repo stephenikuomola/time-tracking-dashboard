@@ -729,6 +729,18 @@ const timePeriodInputs = /**@type {NodeListOf<HTMLInputElement>} */ document.que
 console.log(timePeriodInputs);
 const activitiesCard = /**@type {NodeListOf<HTMLDivElement>} */ document.querySelectorAll('.activities-card_wrapper');
 /**
+ * Handles the change event for time period inputs.
+ * @param {Event} evtObj - The change event object.
+ * @returns {void}
+ */ function handleTimePeriodChange(evtObj) {
+    // Ensure the event target is an HTMLInputElement
+    if (!(evtObj.target instanceof HTMLInputElement)) return;
+    // Only proceed if the input is checked
+    if (!evtObj.target.checked) return;
+    const period = evtObj.target.value;
+    renderTimePeriodAndActivities(period);
+}
+/**
  * This function renders the time period and activities titles
  * from the imported JSON data to the respective HTML elements.
  * @param {string} period - The time period to render (default is 'weekly').
@@ -764,6 +776,9 @@ const activitiesCard = /**@type {NodeListOf<HTMLDivElement>} */ document.querySe
         console.error(error instanceof Error ? error.message : String(error));
     }
 }
+/* Listen for the time period input changes */ timePeriodInputs.forEach(function(input) {
+    input.addEventListener('change', handleTimePeriodChange);
+});
 renderTimePeriodAndActivities();
 
 },{"../data.json":"4UYPk","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT"}],"4UYPk":[function(require,module,exports,__globalThis) {
