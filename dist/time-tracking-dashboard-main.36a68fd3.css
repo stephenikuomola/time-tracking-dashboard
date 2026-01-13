@@ -1695,7 +1695,11 @@ input[type="radio"]:checked + label {
   line-height: 1.19;
 
   @media (width >= 744px) {
-    font-size: 3.5rem;
+    font-size: 3rem;
+
+    @media (width >= 1024px) {
+      font-size: 3.5rem;
+    }
   }
 }
 
