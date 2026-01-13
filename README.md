@@ -7,7 +7,6 @@
 </div>
 
 <br />
-```
 
 ![Desktop Preview](./assets/design/desktop-design.jpg)
 
