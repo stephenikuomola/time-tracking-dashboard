@@ -740,7 +740,7 @@ window.addEventListener('load', ()=>{
  */ function animateCurrentHours(currentHoursElement, current) {
     let startHours = 0;
     const endHours = current;
-    let duration = Math.floor(interval / endHours);
+    const duration = Math.floor(interval / endHours);
     const counter = setInterval(function() {
         startHours += INCREMENT_HOURS_BY;
         currentHoursElement.textContent = `${startHours}hrs`;
@@ -760,7 +760,7 @@ window.addEventListener('load', ()=>{
  */ function animatePreviousHours(previousHoursElement, previous, previousLabel) {
     let startHours = 0;
     const endHours = previous;
-    let duration = Math.floor(interval / endHours);
+    const duration = Math.floor(interval / endHours);
     const counter = setInterval(function() {
         startHours += INCREMENT_HOURS_BY;
         previousHoursElement.innerHTML = `<span class="previous-text">${previousLabel} - </span> ${startHours}hrs`;
