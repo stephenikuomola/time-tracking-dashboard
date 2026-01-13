@@ -1,102 +1,144 @@
-<!DOCTYPE html><html lang=en><meta charset=UTF-8><meta name=viewport content="width=device-width, initial-scale=1.0"><meta name=description content="A time tracking dashboard to visualize and manage your time effectively."><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.faae5c5a.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.64dffa7f.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.2b16a428.png><link rel=manifest href=/assets/favicons/site.webmanifest><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&amp;display=swap" rel=stylesheet><meta property=og:type content=website><meta property=og:url content=https://timetracker4jeremyrobson.netlify.app><meta property=og:title content="Time Tracking Dashboard"><meta property=og:description content="A time tracking dashboard to visualize and manage your time effectively."><meta property=og:image content=https://timetracker4jeremyrobson.netlify.app/assets/design/opengraph.jpg><meta property=og:image:secure_url content=https://timetracker4jeremyrobson.netlify.app/assets/design/opengraph.jpg><meta property=og:image:type content=image/jpeg><meta property=og:image:alt content="Illustration of the time tracking dashboard"><meta property=og:image:width content=1200><meta property=og:image:height content=628><meta name=twitter:card content=summary_large_image><meta name=twitter:site content=@stephenikuomola><meta name=twitter:creator content=@stephenikuomola><link rel=stylesheet href=/time-tracking-dashboard-main.bcf57023.css><script type=module src=/time-tracking-dashboard-main.aa77199d.js></script><title>Time tracking dashboard</title><body>
-    <h1 class=sr-only>Jeremy Robson's Time Tracking Dashboard</h1>
-    <main class=dashboard-tracker>
-      <div class=dashboard-tracker__report-card>
-        <section class=report-card__user-profile>
-          <div class=user-profile__image-container>
-            <img src=/image-jeremy.53678eb9.png alt="Jeremy Robson" class=image-container__image>
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A time tracking dashboard to visualize and manage your time effectively.">
+    <!-- FAVICON -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.e8860f06.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.8dbb7863.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.0ac0030e.png">
+    <link rel="manifest" href="/assets/favicons/site.webmanifest">
+
+    <!-- FONT IMPORTS  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&amp;display=swap" rel="stylesheet">
+
+    <!-- OPEN GRAPHS -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://timetracker4jeremyrobson.netlify.app">
+    <meta property="og:title" content="Time Tracking Dashboard">
+    <meta property="og:description" content="A time tracking dashboard to visualize and manage your time effectively.">
+
+    <!-- OPEN GRAPH IMAGES -->
+    <meta property="og:image" content="https://timetracker4jeremyrobson.netlify.app/assets/design/opengraph.jpg">
+    <meta property="og:image:secure_url" content="https://timetracker4jeremyrobson.netlify.app/assets/design/opengraph.jpg">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:alt" content="Illustration of the time tracking dashboard">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="628">
+
+    <!-- TWITTER CARDS -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@stephenikuomola">
+    <meta name="twitter:creator" content="@stephenikuomola">
+
+    <!-- CSS LINKS -->
+    <link rel="stylesheet" href="/time-tracking-dashboard-main.36a68fd3.css">
+
+    <!-- JAVASCRIPT LINKS -->
+    <script type="module" src="/time-tracking-dashboard-main.5bb0f8c4.js"></script>
+
+    <title>Time tracking dashboard</title>
+  </head>
+  <body>
+    <main class="dashboard-tracker">
+      <h1 class="sr-only">Jeremy Robson's Time Tracking Dashboard</h1>
+      <div class="dashboard-tracker__report-card">
+        <section class="report-card__user-profile">
+          <div class="user-profile__image-container">
+            <img src="/image-jeremy.083f3cba.png" alt="Jeremy Robson" class="image-container__image">
           </div>
-          <div class=user-profile__text-content>
-            <p class=text-content__report-for>Report for</p>
-            <h2 class=text-content__user-name>Jeremy Robson</h2>
+          <div class="user-profile__text-content">
+            <p class="text-content__report-for">Report for</p>
+            <h2 class="text-content__user-name">Jeremy Robson</h2>
           </div>
         </section>
-        <ul class=time-period>
-          <li class=time-period_daily>
-            <input type=radio name=time-period id=daily value=daily>
-            <label for=daily>Daily</label>
+        <ul class="time-period">
+          <li class="time-period_daily">
+            <input type="radio" name="time-period" id="daily" value="daily">
+            <label for="daily">Daily</label>
           </li>
-          <li class=time-period_weekly>
-            <input type=radio name=time-period id=weekly value=weekly checked>
-            <label for=weekly>Weekly</label>
+          <li class="time-period_weekly">
+            <input type="radio" name="time-period" id="weekly" value="weekly" checked="">
+            <label for="weekly">Weekly</label>
           </li>
-          <li class=time-period_monthly>
-            <input type=radio name=time-period id=monthly value=monthly>
-            <label for=monthly>Monthly</label>
+          <li class="time-period_monthly">
+            <input type="radio" name="time-period" id="monthly" value="monthly">
+            <label for="monthly">Monthly</label>
           </li>
         </ul>
       </div>
-      <ul class=activities-cards>
-        
-        <li class=activities-card_work>
+      <ul class="activities-cards">
+        <!-- Activity cards will be dynamically inserted here -->
+        <li class="activities-card_work">
           <div class="activities-card_wrapper work">
-            <div class=activities-card_wrapper_nav>
+            <div class="activities-card_wrapper_nav">
               <p></p>
-              <img src=/icon-ellipsis.6b49d2b2.svg alt="Ellipsis icon">
+              <img src="/icon-ellipsis.de99ef7a.svg" alt="Ellipsis icon">
             </div>
-            <div class=timeframes>
-              <p class=current>00</p>
-              <p class=previous>Label - 00hrs</p>
+            <div class="timeframes">
+              <p class="current">00</p>
+              <p class="previous">Label - 00hrs</p>
             </div>
           </div>
         </li>
-        <li class=activities-card_play>
+        <li class="activities-card_play">
           <div class="activities-card_wrapper play">
-            <div class=activities-card_wrapper_nav>
+            <div class="activities-card_wrapper_nav">
               <p></p>
-              <img src=/icon-ellipsis.6b49d2b2.svg alt="Ellipsis icon">
+              <img src="/icon-ellipsis.de99ef7a.svg" alt="Ellipsis icon">
             </div>
-            <div class=timeframes>
-              <p class=current>00</p>
-              <p class=previous>Label - 00hrs</p>
+            <div class="timeframes">
+              <p class="current">00</p>
+              <p class="previous">Label - 00hrs</p>
             </div>
           </div>
         </li>
-        <li class=activities-card_study>
+        <li class="activities-card_study">
           <div class="activities-card_wrapper study">
-            <div class=activities-card_wrapper_nav>
+            <div class="activities-card_wrapper_nav">
               <p></p>
-              <img src=/icon-ellipsis.6b49d2b2.svg alt="Ellipsis icon">
+              <img src="/icon-ellipsis.de99ef7a.svg" alt="Ellipsis icon">
             </div>
-            <div class=timeframes>
-              <p class=current>00</p>
-              <p class=previous>Label - 00hrs</p>
+            <div class="timeframes">
+              <p class="current">00</p>
+              <p class="previous">Label - 00hrs</p>
             </div>
           </div>
         </li>
-        <li class=activities-card_exercise>
+        <li class="activities-card_exercise">
           <div class="activities-card_wrapper exercise">
-            <div class=activities-card_wrapper_nav>
+            <div class="activities-card_wrapper_nav">
               <p></p>
-              <img src=/icon-ellipsis.6b49d2b2.svg alt="Ellipsis icon">
+              <img src="/icon-ellipsis.de99ef7a.svg" alt="Ellipsis icon">
             </div>
-            <div class=timeframes>
-              <p class=current>00</p>
-              <p class=previous>Label - 00hrs</p>
+            <div class="timeframes">
+              <p class="current">00</p>
+              <p class="previous">Label - 00hrs</p>
             </div>
           </div>
         </li>
-        <li class=activities-card_social>
+        <li class="activities-card_social">
           <div class="activities-card_wrapper social">
-            <div class=activities-card_wrapper_nav>
+            <div class="activities-card_wrapper_nav">
               <p></p>
-              <img src=/icon-ellipsis.6b49d2b2.svg alt="Ellipsis icon">
+              <img src="/icon-ellipsis.de99ef7a.svg" alt="Ellipsis icon">
             </div>
-            <div class=timeframes>
-              <p class=current>00</p>
-              <p class=previous>Label - 00hrs</p>
+            <div class="timeframes">
+              <p class="current">00</p>
+              <p class="previous">Label - 00hrs</p>
             </div>
           </div>
         </li>
-        <li class=activities-card_self-care>
+        <li class="activities-card_self-care">
           <div class="activities-card_wrapper self-care">
-            <div class=activities-card_wrapper_nav>
+            <div class="activities-card_wrapper_nav">
               <p></p>
-              <img src=/icon-ellipsis.6b49d2b2.svg alt="Ellipsis icon">
+              <img src="/icon-ellipsis.de99ef7a.svg" alt="Ellipsis icon">
             </div>
-            <div class=timeframes>
-              <p class=current>00</p>
-              <p class=previous>Label - 00hrs</p>
+            <div class="timeframes">
+              <p class="current">00</p>
+              <p class="previous">Label - 00hrs</p>
             </div>
           </div>
         </li>
@@ -104,3 +146,4 @@
     </main>
   
 
+</body></html>
