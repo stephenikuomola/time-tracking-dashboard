@@ -519,7 +519,7 @@ input[type="radio"]:checked + label {
     "clig" off;
 
   @media (--md-n-above) {
-    font-size: 3.0rem;
+    font-size: 3rem;
 
     @media (--lg-n-above) {
       font-size: 3.5rem;
