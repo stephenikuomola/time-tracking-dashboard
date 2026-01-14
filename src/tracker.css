@@ -390,7 +390,7 @@ input[type="radio"]:checked + label {
 }
 
 .activities-card_wrapper {
-  margin-block-start:calc(40 / 16 * 1rem);
+  margin-block-start: calc(40 / 16 * 1rem);
   border-radius: var(--radius-11);
   background-color: var(--navy-900);
   padding-block: var(--size-fluid-3);
